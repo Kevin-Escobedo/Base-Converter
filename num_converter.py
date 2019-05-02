@@ -6,7 +6,7 @@ def convert_to_base(number: int = 0, base:int = 10, steps:bool = False) -> int:
     new_value = ""
     mod = 0
     div = 0
-    while((div != 1) and (div != 0)):
+    while((div != 1) or (div != 0)):
         mod = number % base
         if base == 16 and (mod > 9 and mod < 16):
             actual_value = hexadecimal[str(mod)]
