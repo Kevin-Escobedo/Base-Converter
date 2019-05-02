@@ -1,12 +1,12 @@
 #Converting Logic
 
-def convert_to_base(num: int = 0, base:int = 10, steps:bool = False) -> int:
+def convert_to_base(number: int = 0, base:int = 10, steps:bool = False) -> int:
     '''Converts input decimal number to input base'''
     hexadecimal = {"10": "A", "11": "B", "12": "C", "13": "D", "14": "E", "15": "F"}
     new_value = ""
     mod = 0
     div = 0
-    while((div != 1) or (div 1= 0)):
+    while((div != 1) or (div != 0)):
         mod = number % base
         if base == 16 and (mod > 9 and mod < 16):
             actual_value = hexadecimal[str(mod)]
