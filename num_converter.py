@@ -36,7 +36,7 @@ def convert_to_base(number: int = 0, base:int = 10, steps:bool = False) -> int:
     return new_value[::-1]
 
 
-def convert_to_decimal(number: (int or str), base:int) -> int:
+def convert_to_decimal(number: (int or str) = 0, base:int = 10) -> int:
     '''Converts input number to decimal'''
     num_list = []
     nums = str(number)
