@@ -1,3 +1,5 @@
+#Author: Kevin C. Escobedo
+#Email: escobedo001@gmail.com
 #Converting Logic
 
 def convert_to_base(number: int = 0, base:int = 10, steps:bool = False) -> int:
@@ -52,3 +54,18 @@ def convert_to_decimal(number: (int or str) = 0, base:int = 10) -> int:
         value += (int(digit) * (base)**(n-1))
         n -= 1
     return value
+
+if __name__ == "__main__":
+    #Converting from decimal to other bases
+    assert convert_to_base(5, 2) == 101
+    assert convert_to_base(10, 2) == 1010
+    assert convert_to_base(24123, 2) == 101111000111011
+    for i in range(1, 101):
+        assert convert_to_base(0, i) == 0 or convert_to_base(0, i) == "0"
+
+    #Converting from other bases to decimal
+    assert convert_to_decimal(101, 2) == 5
+    assert convert_to_decimal("AFFABD", 16) == 11532989
+    assert convert_to_decimal(203834, 17) == 2856820
+    for i in range(101):
+        assert convert_to_decimal(0, i) == 0
