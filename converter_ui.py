@@ -27,7 +27,7 @@ class Converter:
     def get_base(self, original = 0):
         '''Gets the base'''
         try:
-            if original == 1:
+            if original:
                 base = int(self.base.get())
             else:
                 base = int(self.new_base.get())
