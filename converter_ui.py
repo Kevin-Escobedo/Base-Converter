@@ -7,11 +7,11 @@ class Converter:
     def __init__(self):
         '''Sets up the converter GUI'''
         self.root_window = tkinter.Tk()
-        self.root_window.geometry("300x150")
+        self.root_window.geometry("300x125")
         self.root_window.resizable(0, 0)
         self.root_window.title("Number Converter")
         self.root_window.iconbitmap("zero_icon.ico")
-        self.number = tkinter.Entry(self.root_window)
+        self.number = tkinter.Entry(self.root_window, width = 37)
         self.base = tkinter.Entry(self.root_window)
         self.new_base = tkinter.Entry(self.root_window)
         self.result = tkinter.StringVar()
@@ -32,7 +32,7 @@ class Converter:
             else:
                 base = int(self.new_base.get())
 
-            if base == 0:
+            if base == 0 or base == 1:
                 raise ValueError
 
             return base
@@ -42,6 +42,11 @@ class Converter:
                 self.result.set("Invalid Input for Base")
             else:
                 self.result.set("Invalid Input for New Base")
+
+    def key(self, event):
+        '''Handles key input'''
+        if event.keysym == "Return":
+            self.convert()
         
 
     def convert(self):
@@ -69,6 +74,8 @@ class Converter:
 
         button = tkinter.Button(self.root_window, text = "Convert", command = self.convert)
         button.grid(row = 3, column = 2, sticky = tkinter.NSEW)
+
+        self.root_window.bind("<KeyPress>", self.key)
 
         self.root_window.mainloop()
 
