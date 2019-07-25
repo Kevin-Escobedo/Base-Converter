@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <stdlib.h>
+#include <algorithm>
 using namespace std;
 
 int to_power(int base, int exponent)
@@ -83,10 +84,4 @@ int convert_to_base(int number = 0, int base = 10, bool steps = false) //Hex not
 		}
 	}
 	return stoi(flip(value));
-}
-
-int main()
-{
-	int a = convert_to_base(convert_to_decimal(111010, 2), 3);
-	cout<<a<<endl;
 }
