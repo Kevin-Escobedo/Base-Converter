@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <stdlib.h>
-#include <algorithm>
 using namespace std;
 
 int to_power(int base, int exponent)
