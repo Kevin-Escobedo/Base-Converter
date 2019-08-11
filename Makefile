@@ -1,5 +1,5 @@
 all: converter
-converter: base_class.cpp base_convert.cpp
-	g++ base_class.cpp -o base_class -std=c++11
+converter: base_convert.cpp
+	g++ base_convert.cpp -o base_convert -std=c++11
 clean:
-	/bin/rm base_class
+	/bin/rm base_convert

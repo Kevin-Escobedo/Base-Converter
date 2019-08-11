@@ -66,7 +66,7 @@ int convert_to_base(int number = 0, int base = 10, bool steps = false) //Hex not
 		my_div = div(number, base).quot;
 		if(steps)
 		{
-			cout<<number<<" div "<<base<<" = "<<my_div<<endl;
+			cout<<number<<" div "<<base<<" = "<<my_div<<endl<<endl;
 		}
 
 		number = my_div;
@@ -83,4 +83,12 @@ int convert_to_base(int number = 0, int base = 10, bool steps = false) //Hex not
 		}
 	}
 	return stoi(flip(value));
+}
+
+int main()
+{
+	int a = 64;
+	int bin = convert_to_base(a, 2, 1);
+	cout<<bin<<endl;
+	return 0;
 }
