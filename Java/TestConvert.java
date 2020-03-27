@@ -8,7 +8,7 @@ public class TestConvert
 		BaseConvert b = new BaseConvert();
 		int num = 101;
 		int dec = b.convert_to_decimal(num, 2);
-		System.out.println(dec);
+		assert dec == 5 : "ERROR: " + dec + " != 5";
 	}
 
 }
